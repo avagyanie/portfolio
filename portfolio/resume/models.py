@@ -35,7 +35,7 @@ class Personal(models.Model):
     surname = models.TextField(max_length=12)
     address = models.TextField(max_length=30)
     tel = models.CharField(max_length=12)
-    web = models.TextField(max_length=20)
+    web = models.TextField(max_length=100)
     email = models.EmailField()
     age = models.PositiveIntegerField(validators=[MaxValueValidator(100), MinValueValidator(1)])
     birthday = models.DateField()
@@ -69,9 +69,9 @@ class Testimonials(models.Model):
     position = models.TextField(max_length=70)
     testimonial = models.TextField(max_length=300)
     image = models.ImageField(upload_to='images/', null=True, blank=True)
+    link = models.URLField(blank=True, null=True)
     
 
     def __str__(self) -> str:
         return f"Name - {self.full_name}"
     
-
