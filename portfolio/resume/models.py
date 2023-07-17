@@ -1,5 +1,8 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 # Create your models here.
 
@@ -75,3 +78,15 @@ class Testimonials(models.Model):
     def __str__(self) -> str:
         return f"Name - {self.full_name}"
     
+class Blog(models.Model):
+    header = models.CharField(max_length=100, null=True, blank=True)
+    posted = models.DateTimeField(null=True, blank=True)
+    content = models.TextField(null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self) -> str:
+        return self.header
+
+class PersonalInfo(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+

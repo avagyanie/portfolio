@@ -21,7 +21,7 @@
       <div class="profile">
         <img src='{% static "assets/img/profile-img.jpg" %}' alt="" class="img-fluid rounded-circle">
 
-        <h1 class="text-light"><a href="index.html">{{personal.name}} {{personal.surname}}</a></h1>
+        <h1 class="text-light"><a href="index.html">{{personal_info.user.first_name}} {{personal_info.user.last_name}}</a></h1>
         
         <div class="social-links mt-3 text-center">
 
@@ -42,6 +42,7 @@
           <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
           <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+          <li><a href="/blog" class="nav-link"><i class='bx bxl-blogger'></i> <span>Blog</span></a></li>
         </ul>
       </nav>
     </div>
@@ -50,7 +51,7 @@
 
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
-      <h1>{{personal.name}} {{personal.surname}}</h1>
+      <h1>{{personal_info.user.first_name}} {{personal_info.user.last_name}}</h1>
       <p>I'm <span class="typed" data-typed-items="Beginner Python Programmer, Economist-Informatic"></span></p>
     </div>
   </section>
@@ -87,7 +88,7 @@
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>{{personal.age}}</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>{{personal.degree}}</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>{{personal.email}}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>{{personal_info.user.email}}</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                 </ul>
               </div>
@@ -193,7 +194,7 @@
               <ul>
                 <li>{{personal.address}}</li>
                 <li>{{personal.tel}}</li>
-                <li>{{personal.email}}</li>
+                <li>{{personal_info.user.email}}</li>
               </ul>
             </div>
 
