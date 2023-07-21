@@ -90,3 +90,12 @@ class Blog(models.Model):
 class PersonalInfo(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
+
+class Message(models.Model):
+    full_name = models.CharField(max_length=50)
+    email = models.EmailField()
+    subject = models.CharField(max_length=100)
+    message = models.TextField(max_length=1000)
+
+    def __str__(self) -> str:
+        return self.full_name
