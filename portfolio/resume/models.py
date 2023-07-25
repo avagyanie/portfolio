@@ -46,8 +46,8 @@ class Personal(models.Model):
     title = models.TextField(max_length=20)
     degree = models.TextField(max_length=10)
     text1 = models.TextField(max_length=100)
-    text2 = models.TextField(max_length=100)
-    text3 = models.TextField(max_length=100)
+    text2 = models.TextField(max_length=200)
+    text3 = models.TextField(max_length=200)
     pub_date = models.DateTimeField(auto_now_add= True)
 
     def yearpublished(self):
