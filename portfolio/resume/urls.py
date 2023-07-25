@@ -1,11 +1,10 @@
-from .views import home, blog
+from .views import home
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 
 urlpatterns = [
     path('', home, name='home'),
-    path('blog/', blog, name='blog'),
 ]
 
 

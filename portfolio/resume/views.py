@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Skill, Education, Experience, Personal, Social, Testimonials, Blog, PersonalInfo
+from .models import Skill, Education, Experience, Personal, Social, Testimonials, PersonalInfo
 from .forms import MessageForm
 
 # Create your views here.
@@ -27,7 +27,6 @@ def home(request):
     personal = Personal.objects.first()
     social = Social.objects.first()
     testimonial = Testimonials.objects.all()
-    blogs = Blog.objects.filter(user__username="admin")
     personal_info = PersonalInfo.objects.get(user__username = 'Ani')
     cntxt = {
              'skills': skills,
@@ -36,14 +35,8 @@ def home(request):
              'personal': personal,
              'social': social,
              'testimonial': testimonial,
-             'blogs': blogs,
              'personal_info': personal_info,
              "messageForm": messageForm
              }
 
     return render(request, 'index.html', context=cntxt, status=status)
-
-def blog(request):
-    
-    return render(request, 'blog.html')
-

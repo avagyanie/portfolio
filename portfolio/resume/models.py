@@ -78,14 +78,6 @@ class Testimonials(models.Model):
     def __str__(self) -> str:
         return f"Name - {self.full_name}"
     
-class Blog(models.Model):
-    header = models.CharField(max_length=100, null=True, blank=True)
-    posted = models.DateTimeField(null=True, blank=True)
-    content = models.TextField(null=True, blank=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-
-    def __str__(self) -> str:
-        return self.header
 
 class PersonalInfo(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Skill, Education, Experience, Personal, Social, Testimonials, Blog, PersonalInfo, Message
+from .models import Skill, Education, Experience, Personal, Social, Testimonials, PersonalInfo, Message
 
 
 class SkillAdmin(admin.ModelAdmin):
@@ -42,6 +42,5 @@ admin.site.register(Experience, ExperienceAdmin)
 admin.site.register(Personal, PersonalAdmin)
 admin.site.register(Social, SocialAdmin)
 admin.site.register(Testimonials, TestimonialsAdmin)
-admin.site.register(Blog)
 admin.site.register(PersonalInfo)
 admin.site.register(Message)
