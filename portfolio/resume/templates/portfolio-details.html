@@ -66,16 +66,16 @@
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
 
-                <div class="swiper-slide">
-                  <img src='{% static "assets/img/portfolio/portfolio-details-1.jpg" %}' alt="">
+                <!-- <div class="swiper-slide">
+                  <img src='{{ project.image.url }}' alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src='{% static "assets/img/portfolio/portfolio-details-2.jpg" %}' alt="">
-                </div>
+                  <img src='{{ project.image.url }}' alt="">
+                </div> -->
 
                 <div class="swiper-slide">
-                  <img src='{% static "assets/img/portfolio/portfolio-details-3.jpg" %}' alt="">
+                  <img src='{{ project.image.url }}' alt="{{project.name}}">
                 </div>
 
               </div>
@@ -87,16 +87,16 @@
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Category</strong>: Python programming</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                <li><strong>Category</strong>: {{project.category}}</li>
+                <li><strong>Client</strong>: {{project.client}}</li>
+                <li><strong>Project date</strong>: {{project.date}}</li>
+                <li><strong>Project URL</strong>: <a href="#">{{project.url}}</a></li>
               </ul>
             </div>
             <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
+              <h2>{{project.short_description}}</h2>
               <p>
-                But he himself, for the rest of the body of things. Who, therefore, pains them, finding them in the labor of convenience, because because He does not undertake the practice of repudiating duties, and therefore does not undertake duties. They do not know the pleasure of the duties of the accusers. I did not follow him, but to be when they left him.
+                {{project.description}}
               </p>
             </div>
           </div>

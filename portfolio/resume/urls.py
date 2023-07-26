@@ -1,10 +1,11 @@
-from .views import home
+from .views import home, portfolio_project
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 
 urlpatterns = [
     path('', home, name='home'),
+    path('portfolio_project/<int:id>', portfolio_project, name='portfolio_project'),
 ]
 
 

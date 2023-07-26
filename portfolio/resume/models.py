@@ -91,3 +91,19 @@ class Message(models.Model):
 
     def __str__(self) -> str:
         return self.full_name
+
+
+class PortfolioProject(models.Model):
+    name = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='images/', null=True, blank=True)
+    short_description = models.CharField(max_length=100)
+    description = models.TextField(max_length=1000)
+    category = models.CharField(max_length=50)
+    client = models.CharField(max_length=50)
+    date = models.DateField(null=True, blank=True)
+    url = models.URLField()
+
+
+    def __str__(self) -> str:
+        return self.name
+    
