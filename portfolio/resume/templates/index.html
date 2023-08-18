@@ -186,7 +186,7 @@
             <h3 class="resume-title">Sumary</h3>
             <div class="resume-item pb-0">
               <h4>{{personal.name}} {{personal.surname}}</h4>
-              <p><em>Beginner Python programmer. </em></p>
+              <p><em>Beginner Python developer. </em></p>
               <ul>
                 <li>{{personal.address}}</li>
                 <li>{{personal.tel}}</li>
@@ -211,12 +211,12 @@
               <h4>{{i.role}} </h4>
               <h5>{{i.start_date}} - {{i.end_date}} </h5>
               <p><em>{{i.company}} </em></p>
-              <!-- <ul>
-                <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
-                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
-                <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
-                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
-              </ul> -->
+              <ul>
+                <li>{{i.description1}}</li>
+                <li>{{i.description2}}</li>
+                <li>{{i.description3}}</li>
+                <li>{{i.description4}}</li>
+              </ul>
             </div>
             {% endfor %}
           </div>

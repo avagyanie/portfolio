@@ -29,6 +29,10 @@ class Experience(models.Model):
     start_date = models.PositiveIntegerField(validators=[MaxValueValidator(2023), MinValueValidator(1900)])
     end_date = models.PositiveIntegerField(validators=[MaxValueValidator(2023), MinValueValidator(1900)])
     company = models.TextField(max_length=70)
+    description1 = models.CharField(max_length = 200, blank=True, null=True)
+    description2 = models.CharField(max_length = 200, blank=True, null=True)
+    description3 = models.CharField(max_length = 200, blank=True, null=True)
+    description4 = models.CharField(max_length = 200, blank=True, null=True)
     
     def __str__(self) -> str:
         return f"Role - {self.role}, company - {self.company}"
