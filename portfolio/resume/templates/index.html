@@ -46,15 +46,17 @@
     </div>
   </header>
 
-
+  
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>{{personal_info.user.first_name}} {{personal_info.user.last_name}}</h1>
-      <p>I'm <span class="typed" data-typed-items="Beginner Python Programmer, Economist-Informatic"></span></p>
+      <p>I'm <span class="typed" data-typed-items="Beginner Python Developer, Economist-Informatic"></span></p>
     </div>
   </section>
 
+
   <main id="main">
+
 
     <section id="about" class="about">
       <div class="container">
@@ -71,7 +73,7 @@
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3>Python Developer &amp; Economist.</h3>
             <p class="fst-italic">
-              I aspire to be one of the best in any field, but if it doesn't work out, then maybe it's not my place.
+              I aspire to be one of the best in any field, but if it doesn't work out, then perhaps it's not my calling.
             </p>
             <div class="row">
               <div class="col-lg-6">
@@ -92,7 +94,7 @@
               </div>
             </div>
             <p>
-              Nothing is impossible. If someone can do it, so can I.
+              Nothing is impossible. If someone else can do it, I can do it too.
             </p>
           </div>
         </div>
@@ -106,7 +108,7 @@
 
         <div class="section-title">
           <h2>Facts</h2>
-          <p>It takes great efforts to find benefits. His needs arise from something that actually repels him. Let them be what they want. Everyone desires someone, and no one who obstructs others receives their desires. They should flee from this realm of convenience, which exists here.</p>
+          <p>Finding benefits often requires significant effort. Needs can stem from things that might initially repel an individual. Let them pursue their desires. Everyone yearns for something, and those who hinder others from achieving their desires never attain their own. They ought to distance themselves from this realm of comfort that presently exists here.</p>
         </div>
 
         <div class="row no-gutters">
@@ -250,7 +252,6 @@
             <div class="portfolio-wrap">
               <img src='{{ project.image.url }}' class="img-fluid" alt="{{ project.name }}">
               <div class="portfolio-links">
-                <a href="{{ project.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ project.name }}"><i class="bx bx-plus"></i></a>
                 <a href="{% url 'portfolio_project' project.id %}" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
               </div>
             </div>
@@ -268,7 +269,7 @@
 
         <div class="section-title">
           <h2>Testimonials</h2>
-          <p>It takes great pains to benefit. His needs result from something that actually drives him away. Let them be what they want. Anyone whom anyone desires. And no one who hinders receives the others. Because he should flee in this office of convenience, which is here.</p>
+          <p>With a passion for creativity and an unwavering work ethic, I provide a service that is not just exceptional, but truly transformative. Let's bring your ideas to the next level together.</p>
         </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">

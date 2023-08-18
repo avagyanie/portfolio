@@ -25,14 +25,14 @@ class Education(models.Model):
 
 
 class Experience(models.Model):
-    role = models.TextField(max_length=30, blank=True, null=True)
+    role = models.TextField(max_length=30)
     start_date = models.PositiveIntegerField(validators=[MaxValueValidator(2023), MinValueValidator(1900)])
     end_date = models.PositiveIntegerField(validators=[MaxValueValidator(2023), MinValueValidator(1900)])
     company = models.TextField(max_length=70)
-    description1 = models.CharField(max_length = 200, blank=True, null=True)
-    description2 = models.CharField(max_length = 200, blank=True, null=True)
-    description3 = models.CharField(max_length = 200, blank=True, null=True)
-    description4 = models.CharField(max_length = 200, blank=True, null=True)
+    description1 = models.CharField(max_length = 200)
+    description2 = models.CharField(max_length = 200)
+    description3 = models.CharField(max_length = 200)
+    description4 = models.CharField(max_length = 200)
     
     def __str__(self) -> str:
         return f"Role - {self.role}, company - {self.company}"
@@ -75,8 +75,8 @@ class Testimonials(models.Model):
     full_name = models.TextField(max_length=30)
     position = models.TextField(max_length=70)
     testimonial = models.TextField(max_length=300)
-    image = models.ImageField(upload_to='images/', null=True, blank=True)
-    link = models.URLField(blank=True, null=True)
+    image = models.ImageField(upload_to='images/')
+    link = models.URLField()
     
 
     def __str__(self) -> str:
