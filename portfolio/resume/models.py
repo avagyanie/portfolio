@@ -47,7 +47,7 @@ class Personal(models.Model):
     age = models.PositiveIntegerField(validators=[MaxValueValidator(100), MinValueValidator(1)])
     birthday = models.DateField()
     city = models.TextField(max_length=12)
-    title = models.TextField(max_length=20)
+    title = models.TextField(max_length=21)
     degree = models.TextField(max_length=10)
     text1 = models.TextField(max_length=100)
     text2 = models.TextField(max_length=200)
