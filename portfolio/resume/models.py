@@ -62,11 +62,9 @@ class Personal(models.Model):
 
 
 class Social(models.Model):
-    twitter = models.TextField(max_length=70)
-    linkdin = models.TextField(max_length=70)
-    skype = models.TextField(max_length=70)
-    facebook = models.TextField(max_length=70)
-    instagram = models.TextField(max_length=70)
+    github = models.TextField(max_length=70, default='a')
+    linkedin = models.TextField(max_length=70, default='a')
+    telegram = models.TextField(max_length=70, default='a')
 
     def __str__(self) -> str:
         return f"Social pages"

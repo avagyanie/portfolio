@@ -27,7 +27,7 @@ class PersonalAdmin(admin.ModelAdmin):
 
 
 class SocialAdmin(admin.ModelAdmin):
-    list_display = ['twitter', 'linkdin', 'skype', 'facebook', 'instagram']
+    list_display = ['github', 'linkedin', 'telegram']
 
 class TestimonialsAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'position')
