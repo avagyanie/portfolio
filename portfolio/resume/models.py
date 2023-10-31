@@ -46,7 +46,6 @@ class Personal(models.Model):
     tel = models.CharField(max_length=12)
     web = models.TextField(max_length=100)
     email = models.EmailField()
-    # age = models.PositiveIntegerField(validators=[MaxValueValidator(100), MinValueValidator(1)])
     birthday = models.DateField()
     city = models.TextField(max_length=12)
     title = models.TextField(max_length=21)
