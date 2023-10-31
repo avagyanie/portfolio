@@ -1,6 +1,8 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth import get_user_model
+from datetime import date
+
 
 User = get_user_model()
 
@@ -44,7 +46,7 @@ class Personal(models.Model):
     tel = models.CharField(max_length=12)
     web = models.TextField(max_length=100)
     email = models.EmailField()
-    age = models.PositiveIntegerField(validators=[MaxValueValidator(100), MinValueValidator(1)])
+    # age = models.PositiveIntegerField(validators=[MaxValueValidator(100), MinValueValidator(1)])
     birthday = models.DateField()
     city = models.TextField(max_length=12)
     title = models.TextField(max_length=21)
@@ -56,6 +58,11 @@ class Personal(models.Model):
 
     def yearpublished(self):
         return self.pub_date.strftime('%Y')
+    
+    def age(self):
+        today = date.today()
+        age = today.year - self.birthday.year - ((today.month, today.day) < (self.birthday.month, self.birthday.day))
+        return age
     
     def __str__(self) -> str:
         return f"Name - {self.name}, surname - {self.surname}"
