@@ -773,14 +773,14 @@ section {
 }
 
 .testimonials .testimonial-item a {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   margin: 10px 0 5px 0;
   color: #202606;
 }
 
 .testimonials .testimonial-item a:hover {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   margin: 10px 0 5px 0;
   color: #8a955a;
@@ -812,7 +812,7 @@ section {
 }
 
 .testimonials .testimonial-item p {
-  height: 180px;
+  height: 250px;
   font-style: italic;
   margin: 0 15px 15px 15px;
   padding: 20px;
