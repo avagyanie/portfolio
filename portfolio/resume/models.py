@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth import get_user_model
-from datetime import date
+from datetime import date, datetime
 
 
 User = get_user_model()
@@ -18,8 +18,8 @@ class Skill(models.Model):
 
 class Education(models.Model):
     grade = models.TextField(max_length=30, blank=True, null=True)
-    start_date = models.PositiveIntegerField(validators=[MaxValueValidator(2023), MinValueValidator(1900)])
-    end_date = models.PositiveIntegerField(validators=[MaxValueValidator(2023), MinValueValidator(1900)])
+    start_date = models.PositiveIntegerField(validators=[MaxValueValidator(datetime.now().year), MinValueValidator(1900)])
+    end_date = models.PositiveIntegerField(validators=[MaxValueValidator(datetime.now().year), MinValueValidator(1900)])
     university_name = models.TextField(max_length=70)
 
     def __str__(self) -> str:
@@ -28,40 +28,48 @@ class Education(models.Model):
 
 class Experience(models.Model):
     role = models.TextField(max_length=30)
-    start_date = models.PositiveIntegerField(validators=[MaxValueValidator(2023), MinValueValidator(1900)])
-    end_date = models.PositiveIntegerField(validators=[MaxValueValidator(2023), MinValueValidator(1900)])
+    start_date = models.PositiveIntegerField(
+        validators=[MaxValueValidator(datetime.now().year), MinValueValidator(1900)]
+    )
+    end_date = models.PositiveIntegerField(
+        validators=[MaxValueValidator(datetime.now().year), MinValueValidator(1900)]
+    )
     company = models.TextField(max_length=70)
-    description1 = models.CharField(max_length = 200)
-    description2 = models.CharField(max_length = 200)
-    description3 = models.CharField(max_length = 200)
-    description4 = models.CharField(max_length = 200)
+    description1 = models.CharField(max_length=200)
+    description2 = models.CharField(max_length=200)
+    description3 = models.CharField(max_length=200)
+    description4 = models.CharField(max_length=200)
     
     def __str__(self) -> str:
         return f"Role - {self.role}, company - {self.company}"
 
 class Personal(models.Model):
-    name = models.TextField(max_length=12)
-    surname = models.TextField(max_length=12)
-    address = models.TextField(max_length=30)
+    name = models.CharField(max_length=12)
+    surname = models.CharField(max_length=12)
+    address = models.CharField(max_length=30)
     tel = models.CharField(max_length=12)
-    web = models.TextField(max_length=100)
+    web = models.CharField(max_length=100)
     email = models.EmailField()
     birthday = models.DateField()
-    city = models.TextField(max_length=12)
-    title = models.TextField(max_length=21)
-    degree = models.TextField(max_length=10)
+    city = models.CharField(max_length=12)
+    title = models.CharField(max_length=21)
+    degree = models.CharField(max_length=10)
     text1 = models.TextField(max_length=100)
     text2 = models.TextField(max_length=200)
     text3 = models.TextField(max_length=200)
     pub_date = models.DateTimeField(auto_now_add= True)
 
-    def yearpublished(self):
-        return self.pub_date.strftime('%Y')
+    # def yearpublished(self):
+    #     return self.pub_date.strftime('%Y')
     
+    def yearpublished(self):
+        return self.pub_date.year
+
     def age(self):
-        today = date.today()
-        age = today.year - self.birthday.year - ((today.month, today.day) < (self.birthday.month, self.birthday.day))
-        return age
+        if self.birthday:
+            today = date.today()
+            return today.year - self.birthday.year - ((today.month, today.day) < (self.birthday.month, self.birthday.day))
+        return None
     
     def __str__(self) -> str:
         return f"Name - {self.name}, surname - {self.surname}"
